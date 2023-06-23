@@ -1,0 +1,14 @@
+{
+  "host": "0.0.0.0",
+  "port": 3001,
+  "enableHttps": false,
+  "serverHost": "localhost",
+  "serverPort": 8000,
+  "serverHostDev": "localhost",
+  "serverPortDev": 8000,
+  "serverHostTest": "localhost",
+  "serverPortTest": 8000,
+  "serverHostStaging": "localhost",
+  "serverPortStaging": 8000,
+  "serverIp": "sh-cynosdbmysql-grp-rew5tl8a.sql.tencentcdb.com"
+}

@@ -1,0 +1,66 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: meet-admin
+  namespace: wdp-dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      project: www
+      app: meet-admin
+  template:
+    metadata:
+      labels:
+        project: www
+        app: meet-admin
+    spec:
+      containers:
+        - name: meet-api
+          image: harbor.51vr.local/paas-service/meet-admin:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3001
+              name: web
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /healthy
+              port: 3001
+            initialDelaySeconds: 3
+            timeoutSeconds: 3
+          readinessProbe:
+            httpGet:
+              path: /healthy
+              port: 3001
+            initialDelaySeconds: 3
+            timeoutSeconds: 3
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: meet-admin
+  namespace: wdp-dev
+spec:
+  selector:
+    project: www
+    app: meet-admin
+  ports:
+    - name: web
+      port: 3001
+      targetPort: 3001
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: meet-admin
+  namespace: wdp-dev
+spec:
+  rules:
+    - host: 0.0.0.0
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: meet-admin
+              servicePort: 3001

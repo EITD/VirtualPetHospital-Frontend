@@ -1,0 +1,228 @@
+.body {
+  height: 100%;
+}
+
+.body {
+  // background: linear-gradient(#141e30, #243b55);
+  background-size: cover;
+  perspective: 120px;
+}
+
+.rotating-plane {
+  display: none;
+  width: 80px;
+  height: 80px;
+  background: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -40px;
+  margin-top: -40px;
+  // 使用动画
+  animation: rotating-plane 2s infinite;
+
+  &.active {
+    display: block;
+  }
+}
+
+.login {
+  width: 350px;
+  height: 380px;
+  background: #fff;
+  box-shadow: 0px 0px 5px #333;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  padding: 40px;
+  // background-color: rgba(0, 0, 0, 0.4);
+  background-color: #fef2df;
+  border-radius: 20px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+
+}
+
+.login h2 {
+  color: #000000;
+  margin-bottom: 30px;
+  font-size: 23px;
+  font-weight: 600;
+}
+
+.login .login_box {
+  position: relative;
+  width: 100%;
+}
+
+.login .login_box input {
+  outline: none;
+  border: none;
+  width: 100%;
+  padding: 10px 0;
+  margin-bottom: 30px;
+  color: #000000;
+  font-size: 16px;
+  border-bottom: 1px solid #000000;
+  background-color: transparent;
+}
+
+/* 兼容 chrome 浏览器中自带 input 样式 input:-internal-autofill-selected（修改input背景色） */
+.login .login_box input:-webkit-autofill,
+.login .login_box input:-webkit-autofill:hover,
+.login .login_box input:-webkit-autofill:focus,
+.login .login_box input:-webkit-autofill:active {
+  -webkit-transition-delay: 99999s;
+  -webkit-transition: color 99999s ease-out, background-color 99999s ease-out;
+}
+
+.login .login_box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  width: 100%;
+  color: #000000;
+  pointer-events: none;
+  transition: all 0.5s;
+}
+
+
+.login .login_box input:focus+label,
+.login .login_box input:valid+label {
+  top: -20px;
+  color: #976400;
+  font-size: 12px;
+}
+
+.login a {
+  overflow: hidden;
+  position: relative;
+  padding: 10px 20px;
+  color: #976400;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+.login a:hover {
+  color: #000000;
+  border-radius: 5px;
+  background-color: #03e9f4;
+  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
+    0 0 100px #03e9f4;
+}
+
+.login a span {
+  position: absolute;
+}
+
+.login a span:first-child {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #03e9f4);
+  animation: move1 1s linear infinite;
+}
+
+.login a span:nth-child(2) {
+  right: 0;
+  top: -100%;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(transparent, #03e9f4);
+  animation: move2 1s linear 0.25s infinite;
+}
+
+.login a span:nth-child(3) {
+  right: -100%;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to left, transparent, #03e9f4);
+  animation: move3 1s linear 0.5s infinite;
+}
+
+.login a span:last-child {
+  left: 0;
+  bottom: -100%;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(#03e9f4, transparent);
+  animation: move4 1s linear 0.75s infinite;
+}
+
+/* 写一个动画 */
+@keyframes move1 {
+  0% {
+    left: -100%;
+  }
+
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes move2 {
+  0% {
+    top: -100%;
+  }
+
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes move3 {
+  0% {
+    right: -100%;
+  }
+
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+@keyframes move4 {
+  0% {
+    bottom: -100%;
+  }
+
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}
+
+//定义动画
+@keyframes login-small {
+  0% {
+    // 位移 translate， 放大缩小 scale: ;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(0.2);
+  }
+}
+
+@keyframes rotating-plane {
+  0% {
+    transform: rotateX(0deg) rotateY(0);
+  }
+
+  50% {
+    transform: rotateX(-180deg) rotateY(0);
+  }
+
+  100% {
+    transform: rotateX(-180deg) rotateY(180deg);
+  }
+}

@@ -1,0 +1,183 @@
+@charset "UTF-8";
+@mainFontColor: #24262E;
+@mainBgColor: #ffffff;
+@whiteColor: #ffffff;
+@grayColor: #cccccc;
+@scrollBar: #808695;
+@scrollBarBg: #EFF1FA;
+@blue1: #3351C4;
+@blue2: #4065F5;
+@mainFontSize: 14px;
+@fontFamily: -apple-system, BlinkMacSystemFont, "Source Han Sans CN-Medium", "Source Han Sans CN", "Helvetica Neue", Arial, "PingFang SC", "Segoe UI", "Microsoft Yahei", "Microsoft Jhenghei", "Hiragino Sans GB", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+.adapterRadius(@p, @bg) {
+  background: @bg;
+  overflow: hidden;
+  width: @p;
+  height: @p;
+  .borderRadius((@p / 2));
+}
+
+.borderRadius(@r) {
+  border-radius: @r;
+}
+
+.heightCalc(@h, @p) {
+  height: calc(@h - @p);
+}
+
+.widthCalc(@w, @p) {
+  width: calc(@w - @p);
+}
+
+.flexRowStartCenter() {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flexRowStartStartNowrap() {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.flexRowStartCenterWrap() {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flexRowStartStartWrap() {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.flexRowEndCenter() {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.flexRowAroundCenter() {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flexRowBetweenCenter() {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flexRowBetweenStart() {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.flexRowBetweenStartNoWrap() {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.flexRowCenter() {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexColStartCenter() {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flexColCenter() {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexColCenterStart() {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.flexColBetweenCenter() {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flexColBetweenStart() {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.flexColStartStart() {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.flexColStartEnd() {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.flexColStartCenterNoWrap() {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flexColEndCenterNoWrap() {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+}

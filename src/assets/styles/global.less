@@ -1,0 +1,171 @@
+@charset "UTF-8";
+@import './common.less';
+
+html {
+  font-size: @mainFontSize;
+}
+
+body {
+  font-family: @fontFamily;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  color: @mainFontColor;
+  background: @mainBgColor;
+}
+
+html,
+body,
+#app,
+#dashboardTemp,
+#oneScreenTemp {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+a {
+  cursor: pointer;
+}
+
+li {
+  list-style-type: none;
+}
+
+.mr4 {
+  margin-right: 4px;
+}
+
+.toolTipUl {
+  margin: 0;
+  padding: 0;
+
+  li {
+    cursor: pointer;
+
+    &:hover {
+      a {
+        color: @grayColor;
+      }
+    }
+  }
+
+  a {
+    color: @whiteColor;
+  }
+}
+
+.dashLogo {
+  height: 64px;
+  padding: 5px;
+  .flexRowCenter();
+  color: @whiteColor;
+  font-size: 1rem;
+}
+
+.dashHeader {
+  height: 100%;
+  .flexRowBetweenCenter();
+
+  .dashHeaderLeft {
+    .flexRowStartCenter();
+    font-size: 1.2rem;
+  }
+
+  .dashHeaderRight {
+    .flexRowEndCenter();
+  }
+}
+
+/* Scroll Bar Style Start */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: @scrollBarBg;
+  border-radius: 4px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: @scrollBar;
+  border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: @scrollBar;
+}
+
+/* Handle Corner */
+::-webkit-scrollbar-corner {
+  background: none;
+}
+
+/* Scroll Bar Style End */
+.ani-container-enter-active {
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  position: absolute;
+}
+
+.ani-container-leave-active {
+  transition: all 0.2s cubic-bezier(1, 0.5, 0.8, 1);
+  -webkit-transition: all 0.2s cubic-bezier(1, 0.5, 0.8, 1);
+  position: absolute;
+}
+
+.ani-container-enter-from {
+  transform: translateX(-20px);
+  -webkit-transform: translateX(-20px);
+  opacity: 0;
+}
+
+.ani-container-leave-to {
+  transform: translateX(20px);
+  -webkit-transform: translateX(20px);
+  opacity: 0;
+}
+
+.dashConetnt {
+  &>div {
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+    background-color: @mainBgColor;
+  }
+}
+
+.ant-modal .ant-modal-content {
+  border-radius: 16px
+}
+
+.ant-modal-confirm-title,
+.ant-modal-title {
+  font-weight: 600 !important;
+  font-size: 18px
+}
+
+.ant-modal-root .ant-modal-confirm-body>.anticon+.ant-modal-confirm-title+.ant-modal-confirm-content {
+  color: #808695;
+  margin-top: 16px;
+}
+
+
+.ant-modal .ant-modal-content .ant-modal-confirm-btns .ant-btn.ant-btn-primary {
+  // background: #3351C4;
+  // border-color: #3351c4;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.ant-modal .ant-modal-content .ant-modal-confirm-btns .ant-btn {
+  border-color: #ddd;
+  color: #555;
+  border-radius: 8px;
+  height: 40px;
+}
